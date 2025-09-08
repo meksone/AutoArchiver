@@ -1,0 +1,30 @@
+{
+  "timeZone": "Europe/Rome",
+  "dependencies": {
+    "enabledAdvancedServices": [
+      {
+        "userSymbol": "Gmail",
+        "serviceId": "gmail",
+        "version": "v1"
+      },
+      {
+        "userSymbol": "Drive",
+        "serviceId": "drive",
+        "version": "v2"
+      }
+    ],
+    "libraries": [
+      {
+        "userSymbol": "Underscore",
+        "libraryId": "1dvZOkwFAyEH0AJ72uASQASW2Vfdfcb1_lW8JEUIzv1Z0gdgVepy8BHsh",
+        "version": "5"
+      }
+    ]
+  },
+  "webapp": {
+    "executeAs": "USER_ACCESSING",
+    "access": "ANYONE"
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "DEPRECATED_ES5"
+}
