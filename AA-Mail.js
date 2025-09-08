@@ -7,11 +7,10 @@ function aamail() {
   var runId = processInfo.runId;
   var runByUser = processInfo.runByUser;
   
-  /********** imposta le due variabili per il controllo del tempo massimo di esecuzione **********/
   var end, start;
-  start = new Date; // per il controllo del tempo massimo di esecuzione...
+  start = new Date;
   
-  Logger.log(localized.log[1].msg); // Inizio elaborazione regole
+  Logger.log(localized.log[1].msg);
 
   var savedPDF = 0; 
   var howmanymsg = 0;
@@ -32,7 +31,7 @@ function aamail() {
       aaAPIcount = gapiCalls
     } else {
       aaAPIcount = activeRulesFound.gapicalls;
-      var allTheRules = 1
+      var allTheRules = []
     }
 
     if (activeRulesFound.messagesfound > 0){
@@ -130,6 +129,7 @@ function aamail() {
             exitCodes.messages = howmanymsg;
             exitCodes.attachments = howmanyattach;
             exitCodes.linkids = eclinkids;
+            var alertSent = 0;
             exitCodes.errorcode = alertSent;
             exitCodes.timeout = true;
             exitCodes.mboxstatus = statusMbox;

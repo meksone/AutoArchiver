@@ -7,7 +7,6 @@ function checkSchedule(schedule){
   var now = new Date();
   
   // Monthly cleanup check: first day of the month, between 00:00 and 00:20.
-  // In these hours, nothing else should run.
   if (now.getDate() === 1 && now.getHours() === 0 && now.getMinutes() < 20) {
     Logger.log("********** Cleanup time, nothing must run until 00:20!");
     var archivingOk = gRetry2(function(){return monthlyCleanUp()});
@@ -17,12 +16,10 @@ function checkSchedule(schedule){
     return false;
   }
   
-  // If not cleanup time, check the schedule.
-  // The original code only considered the first schedule in the array.
-  // We will keep this behavior to avoid unintended side effects.
-  if (schedule.length > 0) {
-    var start = schedule[0].start;
-    var end = schedule[0].end;
+  // Check if the current time is within any of the scheduled working hours.
+  for (var i = 0; i < schedule.length; i++) {
+    var start = schedule[i].start;
+    var end = schedule[i].end;
     
     if (now >= start && now < end){
       Logger.log("********** Working hours, I'm at your service");
