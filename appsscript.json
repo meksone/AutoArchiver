@@ -26,5 +26,5 @@
     "access": "ANYONE"
   },
   "exceptionLogging": "STACKDRIVER",
-  "runtimeVersion": "DEPRECATED_ES5"
+  "runtimeVersion": "V8"
 }
