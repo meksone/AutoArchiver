@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+<base target="_top">
+<base href="https://polygit.org/components/">
+
+<!--rawgit.com-->
+<!-- <script src="//rawgit.com/webcomponents/webcomponentsjs/master/webcomponents.js"></script>-->
+<script src="https://polygit.org/webcomponents/webcomponentsjs/webcomponents.js"></script>
+<link href="polymer/polymer.html" rel="import">
+
+<link href="font-roboto/roboto.html" rel="import">
+<link href="paper-header-panel/paper-header-panel.html" rel="import">
+<link href="paper-drawer-panel/paper-drawer-panel.html" rel="import">
+<link href="paper-toolbar/paper-toolbar.html" rel="import">
+<link href="paper-icon-button/paper-icon-button.html" rel="import">
+<link href="paper-material/paper-material.html" rel="import">
+<link href="paper-menu/paper-menu.html" rel="import">
+<link href="paper-item/paper-item.html" rel="import">
+<link href="paper-input/paper-input.html" rel="import">
+<link href="paper-button/paper-button.html" rel="import">
+<link href="paper-checkbox/paper-checkbox.html" rel="import">
+<link href="paper-radio-group/paper-radio-group.html" rel="import">
+<link href="paper-radio-button/paper-radio-button.html" rel="import">
+<link href="paper-dialog/paper-dialog.html" rel="import">
+
+<link href="paper-tabs/paper-tabs.html" rel="import">
+<link href="iron-behaviors/iron-control-state.html" rel="import">
+<link href="iron-behaviors/iron-button-state.html" rel="import">
+<link href="iron-pages/iron-pages.html" rel="import">
+<link href="iron-overlay-behavior/iron-overlay-behavior.html" rel="import">
+<link href="iron-icons/iron-icons.html" rel="import">
+
+<link href="iron-flex-layout/iron-flex-layout-classes.html" rel="import">
+
+<?!= include('everest.css.html'); ?>
+
+<body class="fullbleed vertical layout">
+      <template is="dom-bind">
+
+<!-- import classes in an element -->
+
+     
+      
+      <!-- quasi sicuramente inutile -->
+      <script>
+      function updateButton(email, button) {
+        button.value = 'Avviato da ' + email;
+      }
+      </script>
+      
+      
+
+
+      
+      
+      
+                  
+
+      <paper-drawer-panel force-narrow="true">
+
+      <paper-header-panel drawer>
+      <paper-toolbar>
+            
+
+      
+      <div>AutoArchiver</div>
+      </paper-toolbar>
+      
+      <div> <!-- contenuti drawer -->
+      <paper-menu selected="{{selected}}">
+      <paper-item id="001" fullwid>Esegui</paper-item>
+      <paper-item id="002" fullwid>Configurazione</paper-item>
+      <paper-item id="003" fullwid>Manuale</paper-item>
+      <paper-item id="004" fullwid>ChangeLog</paper-item>
+      <paper-item id="005" fullwid>Ultima esecuzione</paper-item>
+      <paper-icon-button paper-drawer-toggle icon="menu" ></paper-icon-button>
+      
+      </paper-menu>
+      </div> <!-- contenuti drawer -->
+      </paper-header-panel>
+      
+      
+      <paper-header-panel main> 
+      <paper-toolbar>
+      <paper-icon-button paper-drawer-toggle icon="menu" ></paper-icon-button>
+      <div>.</div>
+      </paper-toolbar>
+      <div> 
+      
+      <iron-pages selected="{{selected}}">
+      
+      <div id="0">
+      001
+      </div>
+      <div id="1">
+      002
+      </div>
+      <div id="2">
+      003
+      </div>
+      <div id="3">
+      004
+      </div>
+      <div id="4">
+      005
+      </div>
+      <div>
+      pagina fantasma!
+      </div>
+      </iron-pages> 
+      
+
+    
+    </div>
+  </paper-header-panel>
+</paper-drawer-panel>
+      
+      </template>
+
+</body>
